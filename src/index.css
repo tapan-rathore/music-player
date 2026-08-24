@@ -1,1 +1,71 @@
 @import "tailwindcss";
+
+.spotify-scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.spotify-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.spotify-scrollbar::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 9999px;
+    transition: all 200ms ease;
+}
+
+/* React adds this class when mouse enters the container */
+.spotify-scrollbar.scrollbar-visible::-webkit-scrollbar-thumb {
+    background: #727272;
+}
+
+/* When directly hovering the thumb */
+.spotify-scrollbar.scrollbar-visible::-webkit-scrollbar-thumb:hover {
+    background: #a0a0a0;
+}
+
+.spotify-x-scrollbar {
+    scrollbar-width: none; /* Firefox */
+}
+
+.spotify-x-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Edge, Safari */
+}
+
+/* seekbar */
+
+.spotify-seekbar {
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 9999px;
+    cursor: pointer;
+
+    background: linear-gradient(
+        to right,
+        white 0%,
+        white var(--progress),
+        #4d4d4d var(--progress),
+        #4d4d4d 100%
+    );
+}
+
+/* Chrome, Edge, Safari */
+.spotify-seekbar::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+
+/* Firefox */
+.spotify-seekbar::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
