@@ -5,9 +5,11 @@ const Button1 = ({
     btnName,
     className = "",
     iconClassName = "",
-    translate = true }) => {
+    translate = true, ...props }) => {
     return (
-        <div className="group p-1 cursor-pointer text-base font-semibold text-[#b3b3b3] flex items-center">
+        <button 
+        className="group p-1 cursor-pointer text-base font-semibold text-[#b3b3b3] flex items-center"
+        {...props}>
             <div
                 className={`
                 inline-flex items-center gap-2 
@@ -18,7 +20,7 @@ const Button1 = ({
                 {Icon && <Icon size={18} className={iconClassName} />}
                 {btnName}
             </div>
-        </div>
+        </button>
     )
 }
 

@@ -1,9 +1,9 @@
 import React from "react";
 import PlayerControls from "./PlayerControls";
 import VolumeControl from "./VolumeControl";
-import { Download } from "lucide-react";
 import Button1 from "../common/Button1";
 import SidePlayerCard from "./SidePlayerCard";
+import { Download } from "lucide-react";
 
 const MusicPlayer = () => {
     return (

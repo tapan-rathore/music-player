@@ -1,17 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import ProgressBar from "./ProgressBar";
-import { MicVocal, ListMusic, Smartphone, Volume2, PictureInPicture, Maximize } from "lucide-react";
+import { MicVocal, ListMusic, Smartphone, Volume2, VolumeX, PictureInPicture, Maximize } from "lucide-react";
+import Button1 from "../common/Button1";
 
 const VolumeControl = () => {
+    const [ismute, setIsMute] = useState(false)
+
+    const handleClick = () => {
+        setIsMute(!ismute)
+    }
+
     return (
         <div className="flex gap-2 justify-end">
-            <MicVocal size={18}/>
-            <ListMusic size={18} />
-            <Smartphone size={18} />
-            <Volume2 size={18} />
+            <Button1 icon={MicVocal} />
+            <Button1 icon={ListMusic} />
+            <Button1 icon={Smartphone} />
+            <Button1 onClick={handleClick}
+                icon={ismute ? VolumeX: Volume2 } />
             <ProgressBar />
-            <PictureInPicture size={18} />
-            <Maximize size={18} />
+            <Button1 icon={PictureInPicture} />
+            <Button1 icon={Maximize} />
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AlbumCard from "../music/AlbumCard";
+import SongSection from "../music/SongSection";
 
 const Home = () => {
     const [showScrollbar, setShowScrollbar] = useState(false)
@@ -7,9 +7,9 @@ const Home = () => {
         <div onMouseEnter={() => (setShowScrollbar(true))}
             onMouseLeave={() => (setShowScrollbar(false))}
             className={`min-h-0 bg-[#121212] overflow-y-auto rounded-md spotify-scrollbar ${showScrollbar ? "scrollbar-visible" : ""}`}>
-            <AlbumCard />
-            <AlbumCard />
-            <AlbumCard />
+            <SongSection />
+            <SongSection />
+            <SongSection />
         </div>
     )
 }
