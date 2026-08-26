@@ -1,9 +1,13 @@
 import React from "react";
+import { useMusic } from "../../context/MusicContext";
 
-const SongCard = ({song}) => {
-    
+const SongCard = ({ song }) => {
+
+    const { playSong } = useMusic();
+
     return (
-        <div className="w-44 h-full p-2 shrink-0 rounded-lg bg-[#121212] hover:bg-[#1f1f1f] transition-colors duration-200">
+        <div onClick={()=> playSong(song)} 
+        className="w-44 h-full p-2 shrink-0 rounded-lg bg-[#121212] hover:bg-[#1f1f1f] transition-colors duration-200">
             <img
                 className="w-full aspect-square rounded-md object-cover"
                 src={song.cover}
